@@ -56,13 +56,11 @@ Unit tests:
 
 Integration tests:
 
-![integratio](assests/unit_tests.png)
+![integratio](assests/integration_tests.png)
 
 Obs: para a execução dos testes será criado um banco de dados de teste, o sqlite.
 
 ## UML do Projeto
-
-Adicione a imagem UML do projeto abaixo:
 
 ![UML do Projeto](assests/brain_agriculture.jpg)
 UML do Projeto baseado nessas regras:
