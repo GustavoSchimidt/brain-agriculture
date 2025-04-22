@@ -49,10 +49,13 @@ npm run test
 ```
 
 Os testes estão localizados na pasta `tests/`.
+
 Unit tests:
+
 ![units](assests/unit_tests.png)
 
 Integration tests:
+
 ![integratio](assests/unit_tests.png)
 
 Obs: para a execução dos testes será criado um banco de dados de teste, o sqlite.
