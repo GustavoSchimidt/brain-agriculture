@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"João da Silva\",\n    \"documentType\": \"CPF\",\n    \"document\": \"01312495251\",\n    \"farm\": {\n        \"name\": \"Fazenda Boa Esperança\",\n        \"city\": \"Vilhena\",\n        \"state_id\": 22,\n        \"arable_area\": 60.0,\n        \"vegetation_area\": 40.0,\n        \"crops\": [\n            {\n                \"crop_id\": 1,\n                \"harvest_id\": 1\n            },\n            {\n                \"crop_id\": 2,\n                \"harvest_id\": 2\n            }\n        ]\n    }\n}",
+							"raw": "{\n    \"name\": \"João da Silva\",\n    \"documentType\": \"CPF\",\n    \"document\": \"93777201090\",\n    \"farm\": {\n        \"name\": \"Fazenda Boa Esperança\",\n        \"city\": \"Vilhena\",\n        \"state_id\": 22,\n        \"arable_area\": 60.0,\n        \"vegetation_area\": 40.0,\n        \"crops\": [\n            {\n                \"crop_id\": 1,\n                \"harvest_id\": 1\n            },\n            {\n                \"crop_id\": 2,\n                \"harvest_id\": 2\n            }\n        ]\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -72,7 +72,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"João da Silva Atualizado\",\n  \"documentType\": \"CPF\",\n  \"document\": \"01312495251\",\n  \"farm\": {\n    \"name\": \"Fazenda Boa Esperança Atualizado\",\n    \"city\": \"Vilhena\",\n    \"state_id\": 22,\n    \"arable_area\": 60.0,\n    \"vegetation_area\": 40.0,\n    \"crops\": [\n      {\n        \"crop_id\": 1,\n        \"harvest_id\": 1\n      },\n      {\n        \"crop_id\": 2,\n        \"harvest_id\": 2\n      }\n    ]\n  }\n}\n",
+							"raw": "{\n    \"name\": \"João da Silva Atualizado\",\n    \"documentType\": \"CPF\",\n    \"document\": \"93777201090\",\n    \"farm\": {\n        \"name\": \"Fazenda Boa Esperança Atualizado\",\n        \"city\": \"Vilhena\",\n        \"state_id\": 22,\n        \"arable_area\": 60.0,\n        \"vegetation_area\": 40.0,\n        \"crops\": [\n            {\n                \"crop_id\": 1,\n                \"harvest_id\": 1\n            },\n            {\n                \"crop_id\": 2,\n                \"harvest_id\": 2\n            }\n        ]\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -94,7 +94,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "1"
+									"value": "3"
 								}
 							]
 						}
