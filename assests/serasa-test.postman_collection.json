@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "8bd5c7e4-fa1f-41c8-8245-2b2d29c260d3",
+		"name": "serasa-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23652442"
+	},
+	"item": [
+		{
+			"name": "Farmer",
+			"item": [
+				{
+					"name": "criar-produtor-rural",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"João da Silva\",\n  \"documentType\": \"CPF\",\n  \"document\": \"01312495251\",\n  \"farm\": {\n    \"name\": \"Fazenda Boa Esperança\",\n    \"city\": \"Vilhena\",\n    \"state_id\": 22,\n    \"arable_area\": 60.0,\n    \"vegetation_area\": 40.0,\n    \"crops\": [\n      {\n        \"crop_id\": 1,\n        \"harvest_id\": 1\n      },\n      {\n        \"crop_id\": 2,\n        \"harvest_id\": 2\n      }\n    ]\n  }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/api/farmers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"farmers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar-produtor-rural",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/api/farmers/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"farmers",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editar-produtor-rural",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"João da Silva Atualizado\",\n  \"documentType\": \"CPF\",\n  \"document\": \"01312495251\",\n  \"farm\": {\n    \"name\": \"Fazenda Boa Esperança Atualizado\",\n    \"city\": \"Vilhena\",\n    \"state_id\": 22,\n    \"arable_area\": 60.0,\n    \"vegetation_area\": 40.0,\n    \"crops\": [\n      {\n        \"crop_id\": 1,\n        \"harvest_id\": 1\n      },\n      {\n        \"crop_id\": 2,\n        \"harvest_id\": 2\n      }\n    ]\n  }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/api/farmers/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"farmers",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar-produtores-rurais",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/api/farmers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"farmers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "visualizar-produtor-rural",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/api/farmers/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"farmers",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Crop",
+			"item": [
+				{
+					"name": "listar-crops",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/api/crops",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"crops"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Harvest",
+			"item": [
+				{
+					"name": "listar-harvests",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"João da Silva\",\n  \"documentType\": \"CPF\",\n  \"document\": \"01312495251\",\n  \"farm\": {\n    \"name\": \"Fazenda Boa Esperança\",\n    \"city\": \"Vilhena\",\n    \"state_id\": 22,\n    \"total_area\": 100.0,\n    \"arable_area\": 60.0,\n    \"vegetation_area\": 40.0,\n    \"crops\": [\n      {\n        \"crop_id\": 1,\n        \"harvest_id\": 1\n      },\n      {\n        \"crop_id\": 2,\n        \"harvest_id\": 2\n      }\n    ]\n  }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/api/harvests",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"harvests"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dashboard",
+			"item": [
+				{
+					"name": "dashboard",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/api/dashboard",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"dashboard"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

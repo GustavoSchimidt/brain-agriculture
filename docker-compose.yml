@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:14-alpine
+    container_name: brain_agriculture_db
+    environment:
+      POSTGRES_USER: ${DB_USER:-root}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-root}
+      POSTGRES_DB: ${DB_DATABASE:-app}
+      TZ: ${TZ:-UTC}
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - brain_agriculture_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-root} -d ${DB_DATABASE:-app}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: brain_agriculture_app
+    environment:
+      NODE_ENV: ${NODE_ENV:-development}
+      PORT: ${PORT:-3333}
+      HOST: 0.0.0.0
+      APP_KEY: ${APP_KEY}
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: ${DB_USER:-root}
+      DB_PASSWORD: ${DB_PASSWORD:-root}
+      DB_DATABASE: ${DB_DATABASE:-app}
+      TZ: ${TZ:-UTC}
+      LOG_LEVEL: debug
+    ports:
+      - "${PORT:-3333}:3333"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - brain_agriculture_network
+    restart: unless-stopped
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: >
+      sh -c "
+        npm install &&
+        node ace migration:run &&
+        node ace serve --watch
+      "
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3333/"]
+      interval: 10s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+networks:
+  brain_agriculture_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
