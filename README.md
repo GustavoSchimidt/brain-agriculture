@@ -84,5 +84,7 @@ UML do Projeto baseado nessas regras:
 ```bash
 docker-compose exec app node ace migration:run
 ```
+- Em cada requisição, é possível verificar o log na tabela api_access_logs para garantir a observabilidade do sistema, facilitando o monitoramento e a identificação de possíveis problemas.
 
----
+![Tabela de logs](assests/table_log.png)
+
